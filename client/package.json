@@ -1,0 +1,35 @@
+{
+  "name": "jadopado-task-client",
+  "version": "1.0.0",
+  "description": "Login form with 2FA",
+  "main": "index.js",
+  "scripts": {
+    "build": "rm -rf dist && cp -r public dist && rollup -c",
+    "watch": "nodemon -e js,html -w src -x \"npm run build\"",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mnmtanish/jadopado-task.git"
+  },
+  "author": "Muhammed Thanish <mnmtanish@gmail.com> (http://thanish.me/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mnmtanish/jadopado-task/issues"
+  },
+  "homepage": "https://github.com/mnmtanish/jadopado-task#readme",
+  "devDependencies": {
+    "babel-preset-es2015-rollup": "^1.2.0",
+    "nodemon": "^1.11.0",
+    "rollup": "^0.36.4",
+    "rollup-plugin-babel": "^2.6.1",
+    "rollup-plugin-commonjs": "^5.0.5",
+    "rollup-plugin-node-resolve": "^2.0.0",
+    "rollup-plugin-svelte": "^1.0.0",
+    "rollup-plugin-uglify": "^1.0.1"
+  },
+  "dependencies": {
+    "redux": "^3.6.0",
+    "rollup-plugin-replace": "^1.1.1"
+  }
+}

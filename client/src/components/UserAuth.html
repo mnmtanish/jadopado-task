@@ -1,0 +1,40 @@
+<div class="ui segment wrapper">
+  <div class="section login">
+    <UserLogin store="{{store}}" state="{{state}}" />
+  </div>
+  <div class="ui vertical divider">Or</div>
+  <div class="section signup">
+    <UserSignup store="{{store}}" state="{{state}}" />
+  </div>
+</div>
+
+<style>
+  .wrapper {
+    display: flex;
+    justify-content: space-between;
+    -webkit-font-smoothing: antialiased;
+  }
+  .section {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+  }
+  .section.login {
+    padding: 10px 30px 10px 15px;
+  }
+  .section.signup {
+    padding: 10px 15px 10px 30px;
+  }
+</style>
+
+<script>
+  import UserLogin from './UserLogin.html';
+  import UserSignup from './UserSignup.html';
+
+  export default {
+    components: {
+      UserLogin,
+      UserSignup,
+    },
+  }
+</script>

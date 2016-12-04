@@ -1,0 +1,35 @@
+<div class="ui form">
+  <div class="field">
+    <label>Username</label>
+    <div class="ui left icon input"><input type="text" placeholder="Username"><i class="user icon"></i></div>
+  </div>
+  <div class="field">
+    <label>Email Address</label>
+    <div class="ui left icon input"><input type="text" placeholder="name@company.com"><i class="mail icon"></i></div>
+  </div>
+  <div class="field">
+    <label>Phone Number</label>
+    <div class="ui left icon input"><input type="text" placeholder="name@company.com"><i class="phone icon"></i></div>
+  </div>
+  <div class="field">
+    <label>Password</label>
+    <div class="ui left icon input"><input type="password"><i class="lock icon"></i></div>
+  </div>
+  <div class="ui green submit button">Signup</div>
+</div>
+
+<script>
+  export default {
+    data() {
+      return { ready: true };
+    },
+
+    methods: {
+      signup() {
+        const user = { name: 'mnmtanish' };
+        const store = this.get('store');
+        store.dispatch({ type: 'USER_LOGIN', user });
+      },
+    }
+  }
+</script>

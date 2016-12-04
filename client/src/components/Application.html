@@ -1,0 +1,33 @@
+<div class="fullpage center">
+  {{#if !state.user}}
+    <UserAuth store="{{store}}" state="{{state}}" />
+  {{else}}
+    <UserProfile store="{{store}}" state="{{state}}" />
+  {{/if}}
+</div>
+
+<style>
+  .fullpage {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    justify-content: center;
+    align-items: center;
+  }
+</style>
+
+<script>
+  import UserAuth from './UserAuth.html';
+  import UserProfile from './UserProfile.html';
+
+  export default {
+    components: {
+      UserAuth,
+      UserProfile,
+    },
+  }
+</script>

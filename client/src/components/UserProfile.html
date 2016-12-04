@@ -1,0 +1,28 @@
+{{#if !ready}}
+  <div class="ui active inverted dimmer">
+    <div class="ui text loader">Loading</div>
+  </div>
+{{else}}
+  <h2 class="ui center aligned header">Hello {{state.user.name}}</h2>
+  <button on:click="logout()" class="ui mini basic negative button">
+    <i class="user icon"></i>Logout
+  </button>
+{{/if}}
+
+<script>
+  export default {
+    onrender() {
+      setTimeout(() => this.set({ ready: true }) , 1000);
+    },
+
+    methods: {
+      logout() {
+        this.set({ ready: false });
+        setTimeout(() => {
+          const store = this.get('store');
+          store.dispatch({ type: 'USER_LOGOUT' });
+        }, 500);
+      }
+    }
+  }
+</script>

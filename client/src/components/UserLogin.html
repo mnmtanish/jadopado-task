@@ -1,0 +1,51 @@
+<div id="loginform" class="ui form">
+  <div class="field">
+    <label>Username</label>
+    <div class="ui left icon input">
+      <input bind:value='username' type="text" placeholder="Username">
+      <i class="user icon"></i>
+    </div>
+  </div>
+  <div class="field">
+    <label>Password</label>
+    <div class="ui left icon input">
+      <input bind:value='password' type="password">
+      <i class="lock icon"></i>
+    </div>
+  </div>
+  <div on:click="login()" class="ui blue submit button">Login</div>
+</div>
+
+<script>
+  export default {
+    data() {
+      return {
+        username: '',
+        password: '',
+      };
+    },
+
+    onrender() {
+      $('#loginform').form({
+        fields: {
+          username: {
+            identifier: 'name',
+            rules: [{ type: 'empty', prompt: 'Please enter your username' }]
+          },
+        }
+      });
+    },
+
+    methods: {
+      login() {
+        const username = this.get('username');
+        const password = this.get('password');
+        Promise.resolve(null)
+          .then(() => this.set({ ready: false }));
+        const user = { name: this.get('username') };
+        const store = this.get('store');
+        store.dispatch({ type: 'USER_LOGIN', user });
+      },
+    }
+  }
+</script>
